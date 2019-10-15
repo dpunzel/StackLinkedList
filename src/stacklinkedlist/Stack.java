@@ -12,6 +12,8 @@ public class Stack<T extends Comparable<T>> {
             this.root = new Node<>(newData);
         } else {
             Node<T> oldRoot = this.root;
+            this.root = new Node<>(newData);
+            this.root.setNextNode(oldRoot);
         }
     }
 
