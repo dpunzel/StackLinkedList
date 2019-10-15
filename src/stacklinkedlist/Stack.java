@@ -17,6 +17,11 @@ public class Stack<T extends Comparable<T>> {
         }
     }
 
+    // Peak O(1) running time
+    public T peek() {
+        return this.root.getData();
+    }
+
     // Pop is O(1)
     public T pop() {
         T itemToPop = this.root.getData();
