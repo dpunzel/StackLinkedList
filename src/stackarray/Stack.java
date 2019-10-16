@@ -8,7 +8,7 @@ public class Stack<T> {
     public Stack() {
         this.stack = (T[]) new Object[1];
     }
-
+    // O(1) if not resizing
     public void push(T newData) {
         // check to see if array is full
         if (numOfItems == this.stack.length) {
@@ -16,7 +16,7 @@ public class Stack<T> {
             resize(2*this.stack.length);
         }
     }
-
+    // O(1) if not resizing
     public T pop() {
         T itemToPop = this.stack[--numOfItems];
         // verify number of items greater
@@ -34,7 +34,7 @@ public class Stack<T> {
     public int size() {
         return this.numOfItems;
     }
-
+    // Resize takes O(N) time complexity
     private void resize(int capacity) {
 
         T[] stackCopy = (T[]) new Object[capacity];
