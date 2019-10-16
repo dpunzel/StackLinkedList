@@ -17,6 +17,24 @@ public class Stack<T> {
         }
     }
 
+    public T pop() {
+        T itemToPop = this.stack[--numOfItems];
+        // verify number of items greater
+        // also check if stack has shrunk to 25% and resize if so
+        if (numOfItems > 0 && numOfItems == this.stack.length/4) {
+            resize(this.stack.length/2);
+        }
+        return itemToPop;
+    }
+
+    public boolean isEmpty() {
+        return this.numOfItems == 0;
+    }
+
+    public int size() {
+        return this.numOfItems;
+    }
+
     private void resize(int capacity) {
 
         T[] stackCopy = (T[]) new Object[capacity];
