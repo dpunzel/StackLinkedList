@@ -27,9 +27,17 @@ public class Algorithm {
 
                 if (operation.equals("+")) {
                     this.valueStack.push(this.valueStack.pop() + this.valueStack.pop());
+                } else if (operation.equals("*")) {
+                    this.valueStack.push(this.valueStack.pop() * this.valueStack.pop());
                 }
+            } else {
+                this.valueStack.push(Double.parseDouble(s));
             }
 
         }
+    }
+
+    public void result() {
+        System.out.println(this.valueStack.pop());
     }
 }
